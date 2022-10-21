@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTodoItems extends Migration
+class CreateTodoItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,7 +16,7 @@ class CreateTodoItems extends Migration
         Schema::create('todo_items', function (Blueprint $table) {
             $table->bigIncrements('id')->nullable(false);
             $table->date('expiration_date')->nullable(false);
-            $table->string('todo_items', 50)->nullable(false);
+            $table->string('todo_item', 50)->nullable(false);
             $table->tinyInteger('is_completed')->default(0)->nullable(false);
             $table->tinyInteger('is_deleted')->default(0)->nullable(false);
             $table->timestamps();
