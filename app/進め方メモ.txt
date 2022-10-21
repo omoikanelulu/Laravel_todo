@@ -1,0 +1,28 @@
+コントローラを作成（controller）
+
+    php artisan make:controller コントローラ名
+
+ルーティングの設定（routes）
+
+テンプレートを作成（view）
+Bladeテンプレート
+
+
+DBと連携させる（model）
+migration完了
+seeding完了
+
+artisanコマンド
+
+    php artisan make:controller コントローラを作成
+    php artisan make:middleware ミドルウェアを作成
+    php artisan make:migration マイグレーションファイルを作成
+    php artisan make:model モデルを作成
+    php artisan make:provider プロバイダを作成
+    php artisan make:request フォームリクエストを作成
+    php artisan make:rule バリデーションルールを作成
+    php artisan make:seeder シ－ダーファイルを作成
+    php artisan make:test ユニットテストの作成
+    php artisan make:migrate マイグレーションを実行
+    php artisan make:serve ローカルでサーバ起動
+    php artisan db:seed シーディングを実行
