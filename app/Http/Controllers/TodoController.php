@@ -28,9 +28,11 @@ class TodoController extends Controller
         return view('todo.index', $data);
     }
 
-    public function update(Request $request){
-        // $data =
+    public function edit(Request $request){
+        $data = [
+            $request->id
+        ];
 
-        return view('todo.update');
+        return view('todo.edit' $data);
     }
 }
