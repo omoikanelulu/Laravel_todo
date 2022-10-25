@@ -5,12 +5,16 @@
 ルーティングの設定（routes）
 
 テンプレートを作成（view）
-Bladeテンプレート
 
+    viewsフォルダに、〇〇.blade.phpを作成。これがテンプレート。
+
+    viewsフォルダ内にlayoutsフォルダを作り、〇〇app.blade.phpの様にファイルを作ると、
+    テンプレートの元となるレイアウトが作成できる。
+    テンプレートでは、レイアウトを読み込んでおく。（@extends('layouts.ファイル名'）
 
 DBと連携させる（model）
-migration完了
-seeding完了
+    migration完了
+    seeding完了
 
 artisanコマンド
 
