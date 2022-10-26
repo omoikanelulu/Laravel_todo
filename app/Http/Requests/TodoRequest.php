@@ -13,7 +13,11 @@ class TodoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        if ($this->path() == 'todo') {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -24,7 +28,20 @@ class TodoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'expiration_date' => 'required',
+            'expiration_date' => 'date',
+            'todo_item' => 'required',
+            'todo_item' => 'max:50',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'expiration_date.required' => '期限日を入力してください',
+            'expiration_date.date' => '期限日の形式が正しくありません',
+            'todo_item.required' => 'TODO項目を入力してください',
+            'todo_item.max:50' => 'TODO項目は50文字以内で入力してください',
         ];
     }
 }

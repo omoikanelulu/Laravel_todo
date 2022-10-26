@@ -7,10 +7,12 @@
         @csrf
         <div class="row">
             <div class="col-3">
-                <input type="date" class="form-control" value="{{ $today }}">
+                <label for="">期限日</label>
+                <input type="date" class="form-control" value="{{ $expiration_date }}">
             </div>
             <div class="col-12">
-                <input type="text" class="form-control" placeholder="Last name">
+                <label for="">TODO項目</label>
+                <input type="text" class="form-control" value="{{$todo_item}}">
             </div>
 
             <input type="checkbox" name="completed" id="completed">

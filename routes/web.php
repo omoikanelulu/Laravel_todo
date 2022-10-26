@@ -16,4 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('todo', 'TodoController@index');
-Route::get('update', 'TodoController@update');
+Route::post('todo', 'TodoController@index');
+
+Route::get('todo.edit', 'TodoController@edit');
