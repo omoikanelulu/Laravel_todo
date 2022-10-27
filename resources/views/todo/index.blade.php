@@ -31,7 +31,8 @@
             <tr>
                 <td>{{ $item->expiration_date }}</td>
                 <td>{{ $item->todo_item }}</td>
-                <form action="/update" method="GET">
+                <form action="/todo/edit" method="POST">
+                    @csrf
                     <input type="hidden" name="id" value="{{ $item->id }}">
                     <td><input type="submit" value="更新" class="btn btn-outline-primary btn-sm"></td>
                 </form>

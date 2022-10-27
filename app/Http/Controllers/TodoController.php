@@ -30,17 +30,11 @@ class TodoController extends Controller
         return view('todo.index', $data);
     }
 
-    public function post(TodoRequest $request)
-    {
-        return view('todo.index');
-    }
-
-
     public function edit(Request $request)
     {
         $items = DB::table('todo_items')
             ->where('id', $request->id)
-            ->get();
+            ->first();
 
         $data = [
             'items' => $items,
