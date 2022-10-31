@@ -3,21 +3,16 @@
 @section('title', 'TODOリスト | 更新')
 
 @section('form')
-@php
-    var_dump($items);
-    exit();
-@endphp
-
     <form>
         @csrf
         <div class="row">
             <div class="col-3">
                 <label for="">期限日</label>
-                <input type="date" class="form-control" value="{{ $items->expiration_date }}">
+                <input type="date" class="form-control" value="{{ $item->expiration_date }}">
             </div>
             <div class="col-12">
                 <label for="">TODO項目</label>
-                <input type="text" class="form-control" value="{{ $items->todo_item }}">
+                <input type="text" class="form-control" value="{{ $item->todo_item }}">
             </div>
 
             <div class="col-12">

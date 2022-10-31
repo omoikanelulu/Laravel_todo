@@ -52,12 +52,12 @@ class TodoController extends Controller
     public function edit(Request $request)
     {
         // DBから条件に合致するレコード取得する
-        $items = DB::table('todo_items')
+        $item = DB::table('todo_items')
             ->where('id', $request->id)
-            ->first();
+            ->first(); // 1件だけ取得
 
         $data = [
-            'items' => $items,
+            'item' => $item,
         ];
 
         return view('/todo.edit', $data);
