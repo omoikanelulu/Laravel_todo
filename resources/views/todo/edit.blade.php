@@ -3,6 +3,11 @@
 @section('title', 'TODOリスト | 更新')
 
 @section('form')
+@php
+    var_dump($items);
+    exit();
+@endphp
+
     <form>
         @csrf
         <div class="row">

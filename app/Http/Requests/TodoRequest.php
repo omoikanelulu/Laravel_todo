@@ -13,11 +13,7 @@ class TodoRequest extends FormRequest
      */
     public function authorize()
     {
-        if ($this->path() == 'todo') {
-            return true;
-        } else {
-            return false;
-        }
+        return true;
     }
 
     /**
@@ -28,10 +24,8 @@ class TodoRequest extends FormRequest
     public function rules()
     {
         return [
-            'expiration_date' => 'required',
-            'expiration_date' => 'date',
-            'todo_item' => 'required',
-            'todo_item' => 'max:50',
+            'expiration_date' => 'required date',
+            'todo_item' => 'required max:50',
         ];
     }
 
