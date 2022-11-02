@@ -2,6 +2,15 @@
 
 @section('title', 'TODOリスト')
 
+@section('style')
+    <style>
+        /* 完了したTODOのスタイル */
+        .complete {
+            text-decoration: double line-through;
+        }
+    </style>
+@endsection
+
 @section('form')
     <form action="/todo" method="POST">
         @csrf
@@ -34,10 +43,15 @@
             <th></th>
         </tr>
         @foreach ($items as $item)
-            <tr>
+            <tr
+                class="
+            @if ($item->is_completed == 1) {{ 'complete' }}
+            @elseif ($item->expiration_date < $today)
+                {{ 'text-danger' }} @endif
+            ">
                 <td>{{ $item->expiration_date }}</td>
                 <td>{{ $item->todo_item }}</td>
-                <form action="/todo/edit" method="POST">
+                <form action="/todo/edit" method="GET">
                     @csrf
                     <input type="hidden" name="id" value="{{ $item->id }}">
                     <td><input type="submit" value="更新" class="btn btn-outline-primary btn-sm"></td>
