@@ -16,7 +16,8 @@
         @csrf
         <div class="row">
             <div class="col-3">
-                <input type="date" class="form-control" name="expiration_date" value="{{ $today }}">
+                <input type="date" class="form-control" name="expiration_date"
+                    value="{{ $errors->has('expiration_date') ? old('expiration_date') : $today }}">
                 @error('expiration_date')
                     {{ $message }}
                 @enderror

@@ -35,7 +35,7 @@ class TodoController extends Controller
         return view('todo.index', $data);
     }
 
-    public function create(Request $request)
+    public function create(TodoRequest $request)
     {
         $param = [
             'expiration_date' => $request->expiration_date,
@@ -63,7 +63,7 @@ class TodoController extends Controller
         return view('/todo.edit', $data);
     }
 
-    public function update(Request $request)
+    public function update(TodoRequest $request)
     {
         // アップデートに必要なパラメータをまとめる
         $param = [

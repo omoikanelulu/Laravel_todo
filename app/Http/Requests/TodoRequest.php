@@ -24,8 +24,8 @@ class TodoRequest extends FormRequest
     public function rules()
     {
         return [
-            'expiration_date' => 'required date',
-            'todo_item' => 'required max:50',
+            'expiration_date' => 'required | date',
+            'todo_item' => 'required | max:50',
         ];
     }
 
@@ -35,7 +35,7 @@ class TodoRequest extends FormRequest
             'expiration_date.required' => '期限日を入力してください',
             'expiration_date.date' => '期限日の形式が正しくありません',
             'todo_item.required' => 'TODO項目を入力してください',
-            'todo_item.max:50' => 'TODO項目は50文字以内で入力してください',
+            'todo_item.max' => 'TODO項目は50文字以内で入力してください',
         ];
     }
 }

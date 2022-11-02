@@ -9,16 +9,27 @@
         <div class="row">
             <div class="col-3">
                 <label for="">期限日</label>
-                <input type="date" class="form-control" name="expiration_date" value="{{ $item->expiration_date }}">
+                <input type="date" class="form-control" name="expiration_date"
+                    value="{{ $errors->has('expiration_date') ? old('expiration_date') : $item->expiration_date }}">
+                @error('expiration_date')
+                    {{ $message }}
+                @enderror
             </div>
             <div class="col-12">
                 <label for="">TODO項目</label>
-                <input type="text" class="form-control" name="todo_item" value="{{ $item->todo_item }}">
+                <input type="text" class="form-control" name="todo_item"
+                    value="{{ $errors->has('todo_item') ? old('todo_item') : $item->todo_item }}">
+                @error('todo_item')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="col-12">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="is_completed" id="is_completed" value="1" {{$item->is_completed == 1 ? 'checked' : ''}}>
+                    <input class="form-check-input" type="checkbox" name="is_completed" id="is_completed" value="1"
+                        {{ $item->is_completed == 1 ? 'checked' : '' }}>
                     <label class="form-check-label" for="is_completed">完了する</label>
                 </div>
             </div>
