@@ -29,4 +29,5 @@ artisanコマンド
     php artisan make:test ユニットテストの作成
     php artisan make:migrate マイグレーションを実行
     php artisan make:serve ローカルでサーバ起動
+    php artisan make:model モデルを作成
     php artisan db:seed シーディングを実行
