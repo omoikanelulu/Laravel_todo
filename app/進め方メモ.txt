@@ -31,3 +31,6 @@ artisanコマンド
     php artisan make:serve ローカルでサーバ起動
     php artisan make:model モデルを作成
     php artisan db:seed シーディングを実行
+
+    戻るボタン
+    <input type="button" class="form-control btn btn-secondary" onclick="location.href='/todo';" value="もどる">
