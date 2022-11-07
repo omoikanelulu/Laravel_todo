@@ -32,5 +32,28 @@ artisanコマンド
     php artisan make:model モデルを作成
     php artisan db:seed シーディングを実行
 
-    戻るボタン
-    <input type="button" class="form-control btn btn-secondary" onclick="location.href='/todo';" value="もどる">
+戻るボタン
+<input type="button" class="form-control btn btn-secondary" onclick="location.href='/todo';" value="もどる">
+
+Laravelのmigrationを使用してDBテーブルを生成するため、まずはマイグレーションのファイルを作成
+$ php artisan make:migration create_xxx_table
+作成したmigrationファイルに必要なカラムを入力していく
+DB名は複数形にしておく！（boards）
+
+完成したらmigrationを実行
+$ php artisan migrate
+これでテーブルが作られる
+
+続いてModelを作成する
+$ php artisan make:model xxx
+Modelは単数形で！（Board）
+
+そしてコントローラを作成する
+$ php artisan make:controller BoardController
+public function index(Request $request)
+public function add(Request $request)
+public function create(Request $request)
+等の処理を記述する
+
+これらを表示するview（テンプレート）を作成する
+ルート情報を記述する
