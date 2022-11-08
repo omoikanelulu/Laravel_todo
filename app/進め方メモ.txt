@@ -19,6 +19,7 @@ DBと連携させる（model）
 artisanコマンド
 
     php artisan make:controller コントローラを作成
+        --resource CRUD操作に必要なメソッドが複数用意された状態でコントローラが作成される
     php artisan make:middleware ミドルウェアを作成
     php artisan make:migration マイグレーションファイルを作成
     php artisan make:model モデルを作成
